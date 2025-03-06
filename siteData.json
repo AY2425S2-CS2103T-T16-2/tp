@@ -155,6 +155,24 @@
         "project-addressbook-level-3": "Project: AddressBook Level 3"
       },
       "headingKeywords": {}
+    },
+    {
+      "src": "team/reshiro.md",
+      "title": "Michael's Project Portfolio Page",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/tanxingzhong.md",
+      "title": "Xing Zhong's Project Portfolio Page",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/varsha13152.md",
+      "title": "Varsha's Project Portfolio Page",
+      "headings": {},
+      "headingKeywords": {}
     }
   ]
 }

@@ -20,7 +20,7 @@ with(this){return _c('h2',{attrs:{"id":"project-team"}},[_v("Project team"),_c('
 with(this){return _c('h3',{attrs:{"id":"tan-xing-zhong"}},[_v("Tan Xing Zhong"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#tan-xing-zhong","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("["),_c('a',{attrs:{"href":"https://www.linkedin.com/in/tan-xing-zhong-677492346/edit/forms/skills/new/?profileFormEntryPoint=PROFILE_SECTION"}},[_v("linkedin")]),_v("]\n["),_c('a',{attrs:{"href":"https://github.com/TanXingZhong"}},[_v("github")]),_v("]\n["),_c('a',{attrs:{"href":"https://drive.google.com/file/d/1WZkiFqrl-ZK3FwXPm555aZXWv69SyzfE/view?usp=sharing"}},[_v("resume")]),_v("]")])}
+with(this){return _c('p',[_v("["),_c('a',{attrs:{"href":"https://www.linkedin.com/in/tan-xing-zhong-677492346/edit/forms/skills/new/?profileFormEntryPoint=PROFILE_SECTION"}},[_v("linkedin")]),_v("]\n["),_c('a',{attrs:{"href":"https://github.com/TanXingZhong"}},[_v("github")]),_v("]\n["),_c('a',{attrs:{"href":"https://drive.google.com/file/d/1WZkiFqrl-ZK3FwXPm555aZXWv69SyzfE/view?usp=sharing"}},[_v("resume")]),_v("]\n["),_c('a',{attrs:{"href":"/tp/team/tanxingzhong.html"}},[_v("portfolio")]),_v("]")])}
 },function anonymous(
 ) {
 with(this){return _c('ul',[_c('li',[_v("Role: Leader")]),_v(" "),_c('li',[_v("Responsibilities: Deliverables and deadlines")])])}
@@ -29,7 +29,7 @@ with(this){return _c('ul',[_c('li',[_v("Role: Leader")]),_v(" "),_c('li',[_v("Re
 with(this){return _c('h3',{attrs:{"id":"michael-cheong"}},[_v("Michael Cheong"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#michael-cheong","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("["),_c('a',{attrs:{"href":"https://github.com/Reshiro"}},[_v("github")]),_v("]")])}
+with(this){return _c('p',[_v("["),_c('a',{attrs:{"href":"https://github.com/Reshiro"}},[_v("github")]),_v("]\n["),_c('a',{attrs:{"href":"/tp/team/reshiro.html"}},[_v("portfolio")]),_v("]")])}
 },function anonymous(
 ) {
 with(this){return _c('ul',[_c('li',[_v("Role: Testing")])])}
@@ -38,7 +38,7 @@ with(this){return _c('ul',[_c('li',[_v("Role: Testing")])])}
 with(this){return _c('h3',{attrs:{"id":"guan-qun"}},[_v("Guan Qun"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#guan-qun","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("["),_c('a',{attrs:{"href":"https://www.linkedin.com/in/tan-guan-qun-0417751b3/"}},[_v("homepage")]),_v("]\n["),_c('a',{attrs:{"href":"https://github.com/monobeartae"}},[_v("github")]),_v("]\n["),_c('a',{attrs:{"href":"/tp/team/johndoe.html"}},[_v("portfolio")]),_v("]")])}
+with(this){return _c('p',[_v("["),_c('a',{attrs:{"href":"https://www.linkedin.com/in/tan-guan-qun-0417751b3/"}},[_v("homepage")]),_v("]\n["),_c('a',{attrs:{"href":"https://github.com/monobeartae"}},[_v("github")]),_v("]\n["),_c('a',{attrs:{"href":"/tp/team/monobeartae.html"}},[_v("portfolio")]),_v("]")])}
 },function anonymous(
 ) {
 with(this){return _c('ul',[_c('li',[_v("Role: Integration")])])}
@@ -62,6 +62,6 @@ with(this){return _c('p',[_v("["),_c('a',{attrs:{"href":"https://www.linkedin.co
 with(this){return _c('ul',[_c('li',[_v("Role: Code Quality")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Thu, 6 Mar 2025, 23:46:05 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Thu, 6 Mar 2025, 23:58:21 GMT+8]")])])])}
 }];
   
