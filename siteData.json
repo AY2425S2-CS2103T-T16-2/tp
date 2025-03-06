@@ -7,6 +7,7 @@
       "headings": {
         "about-us": "About Us",
         "project-team": "Project team",
+        "guan-qun": "Guan Qun",
         "hai-hui": "Hai Hui",
         "v-varsha": "V Varsha"
       },
@@ -141,6 +142,14 @@
     {
       "src": "team/johndoe.md",
       "title": "John Doe's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/monobeartae.md",
+      "title": "Guan Qun's Project Portfolio Page",
       "headings": {
         "project-addressbook-level-3": "Project: AddressBook Level 3"
       },
