@@ -38,8 +38,8 @@
     },
     {
       "src": "DeveloperGuide.md",
-      "title": "Developer Guide",
       "headings": {
+        "d-layout-default-md-title-and-quot-developer-guide-and-quot-pagenav-3": "D---\nlayout: default.md\ntitle: &quot;Developer Guide&quot;\npageNav: 3",
         "ab-3-developer-guide": "AB-3 Developer Guide",
         "acknowledgements": "Acknowledgements",
         "setting-up-getting-started": "Setting up, getting started",
