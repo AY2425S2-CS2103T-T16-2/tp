@@ -11,6 +11,7 @@ import seedu.innsync.commons.core.LogsCenter;
 import seedu.innsync.logic.commands.AddCommand;
 import seedu.innsync.logic.commands.ClearCommand;
 import seedu.innsync.logic.commands.Command;
+import seedu.innsync.logic.commands.DateTagCommand;
 import seedu.innsync.logic.commands.DeleteCommand;
 import seedu.innsync.logic.commands.EditCommand;
 import seedu.innsync.logic.commands.ExitCommand;
@@ -61,6 +62,9 @@ public class AddressBookParser {
 
         case DeleteCommand.COMMAND_WORD:
             return new DeleteCommandParser().parse(arguments);
+
+        case DateTagCommand.COMMAND_WORD:
+            return new DateTagCommandParser().parse(arguments);
 
         case ClearCommand.COMMAND_WORD:
             return new ClearCommand();
