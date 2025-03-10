@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 import seedu.innsync.logic.commands.AddCommand;
 import seedu.innsync.logic.parser.exceptions.ParseException;
 import seedu.innsync.model.person.Address;
-import seedu.innsync.model.person.DateTag;
+import seedu.innsync.model.tag.DateTag;
 import seedu.innsync.model.person.Email;
 import seedu.innsync.model.person.Name;
 import seedu.innsync.model.person.Person;
@@ -45,10 +45,9 @@ public class AddCommandParser implements Parser<AddCommand> {
         Phone phone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE).get());
         Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
         Address address = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
-        DateTag dateTag = new DateTag("");
+        Set<DateTag> dateTagList = ParserUtil.parseDateTags(argMultimap.getAllValues(PREFIX_DATETAG));
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
-
-        Person person = new Person(name, phone, email, address, dateTag, tagList);
+        Person person = new Person(name, phone, email, address, dateTagList, tagList);
 
         return new AddCommand(person);
     }

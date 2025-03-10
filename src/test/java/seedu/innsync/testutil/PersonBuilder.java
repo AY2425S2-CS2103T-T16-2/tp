@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import seedu.innsync.model.person.Address;
-import seedu.innsync.model.person.DateTag;
+import seedu.innsync.model.tag.DateTag;
 import seedu.innsync.model.person.Email;
 import seedu.innsync.model.person.Name;
 import seedu.innsync.model.person.Person;

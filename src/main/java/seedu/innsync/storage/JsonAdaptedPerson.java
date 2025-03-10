@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.innsync.commons.exceptions.IllegalValueException;
 import seedu.innsync.model.person.Address;
-import seedu.innsync.model.person.DateTag;
+import seedu.innsync.model.tag.DateTag;
 import seedu.innsync.model.person.Email;
 import seedu.innsync.model.person.Name;
 import seedu.innsync.model.person.Person;
@@ -29,7 +29,7 @@ class JsonAdaptedPerson {
     private final String phone;
     private final String email;
     private final String address;
-    private final String dateTag;
+    private final List<JsonAdaptedDateTag> dateTags = new ArrayList<>();
     private final List<JsonAdaptedTag> tags = new ArrayList<>();
 
     /**
@@ -38,13 +38,15 @@ class JsonAdaptedPerson {
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
                              @JsonProperty("email") String email, @JsonProperty("address") String address,
-                             @JsonProperty("dateTag") String dateTag,
+                             @JsonProperty("dateTags") List<JsonAdaptedDateTag> dateTags,
                              @JsonProperty("tags") List<JsonAdaptedTag> tags) {
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.address = address;
-        this.dateTag = dateTag;
+        if (dateTags != null) {
+            this.dateTags.addAll(dateTags);
+        }
         if (tags != null) {
             this.tags.addAll(tags);
         }
@@ -58,7 +60,9 @@ class JsonAdaptedPerson {
         phone = source.getPhone().value;
         email = source.getEmail().value;
         address = source.getAddress().value;
-        dateTag = source.getDateTag().value;
+        dateTags.addAll(source.getDateTags().stream()
+                .map(JsonAdaptedDateTag::new)
+                .collect(Collectors.toList()));
         tags.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
@@ -73,6 +77,10 @@ class JsonAdaptedPerson {
         final List<Tag> personTags = new ArrayList<>();
         for (JsonAdaptedTag tag : tags) {
             personTags.add(tag.toModelType());
+        }
+        final List<DateTag> personDateTags = new ArrayList<>();
+        for (JsonAdaptedDateTag dateTag : dateTags) {
+            personDateTags.add(dateTag.toModelType());
         }
 
         if (name == null) {
@@ -107,16 +115,10 @@ class JsonAdaptedPerson {
         }
         final Address modelAddress = new Address(address);
 
-        if (dateTag == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, DateTag.class.getSimpleName()));
-        }
-        if (!DateTag.isValidDateTag(dateTag)) {
-            throw new IllegalValueException(Address.MESSAGE_CONSTRAINTS);
-        }
-        final DateTag modelDateTag = new DateTag(dateTag);
+        final Set<DateTag> modelDateTags = new HashSet<>(personDateTags);
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
-        return new Person(modelName, modelPhone, modelEmail, modelAddress, modelDateTag, modelTags);
+        return new Person(modelName, modelPhone, modelEmail, modelAddress, modelDateTags, modelTags);
     }
 
 }

@@ -10,7 +10,7 @@ import seedu.innsync.commons.core.index.Index;
 import seedu.innsync.commons.util.StringUtil;
 import seedu.innsync.logic.parser.exceptions.ParseException;
 import seedu.innsync.model.person.Address;
-import seedu.innsync.model.person.DateTag;
+import seedu.innsync.model.tag.DateTag;
 import seedu.innsync.model.person.Email;
 import seedu.innsync.model.person.Name;
 import seedu.innsync.model.person.Phone;
