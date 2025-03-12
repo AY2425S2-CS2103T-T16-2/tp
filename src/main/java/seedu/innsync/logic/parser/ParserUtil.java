@@ -10,6 +10,7 @@ import seedu.innsync.commons.core.index.Index;
 import seedu.innsync.commons.util.StringUtil;
 import seedu.innsync.logic.parser.exceptions.ParseException;
 import seedu.innsync.model.person.Address;
+import seedu.innsync.model.tag.DateTag;
 import seedu.innsync.model.person.Email;
 import seedu.innsync.model.person.Name;
 import seedu.innsync.model.person.Phone;
@@ -93,6 +94,33 @@ public class ParserUtil {
             throw new ParseException(Email.MESSAGE_CONSTRAINTS);
         }
         return new Email(trimmedEmail);
+    }
+
+    /**
+     * Parses a {@code String dateTag} into a {@code dateTag}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code dateTag} is invalid.
+     */
+    public static DateTag parseDateTag(String dateTag) throws ParseException {
+        requireNonNull(dateTag);
+        String trimmedDateTag = dateTag.trim();
+        if (!Tag.isValidTagName(trimmedDateTag)) {
+            throw new ParseException(Tag.MESSAGE_CONSTRAINTS);
+        }
+        return new DateTag(trimmedDateTag);
+    }
+
+    /**
+     * Parses {@code Collection<String> dateTags} into a {@code Set<DateTag>}.
+     */
+    public static Set<DateTag> parseDateTags(Collection<String> dateTags) throws ParseException {
+        requireNonNull(dateTags);
+        final Set<DateTag> dateTagSet = new HashSet<>();
+        for (String dateTagName : dateTags) {
+            dateTagSet.add(parseDateTag(dateTagName));
+        }
+        return dateTagSet;
     }
 
     /**

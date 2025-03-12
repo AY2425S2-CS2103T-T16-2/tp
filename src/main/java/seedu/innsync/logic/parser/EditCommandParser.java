@@ -3,6 +3,7 @@ package seedu.innsync.logic.parser;
 import static java.util.Objects.requireNonNull;
 import static seedu.innsync.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.innsync.logic.parser.CliSyntax.PREFIX_ADDRESS;
+import static seedu.innsync.logic.parser.CliSyntax.PREFIX_DATETAG;
 import static seedu.innsync.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.innsync.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.innsync.logic.parser.CliSyntax.PREFIX_PHONE;
@@ -17,6 +18,7 @@ import seedu.innsync.commons.core.index.Index;
 import seedu.innsync.logic.commands.EditCommand;
 import seedu.innsync.logic.commands.EditCommand.EditPersonDescriptor;
 import seedu.innsync.logic.parser.exceptions.ParseException;
+import seedu.innsync.model.tag.DateTag;
 import seedu.innsync.model.tag.Tag;
 
 /**
@@ -32,7 +34,7 @@ public class EditCommandParser implements Parser<EditCommand> {
     public EditCommand parse(String args) throws ParseException {
         requireNonNull(args);
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_ADDRESS, PREFIX_TAG);
+                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_ADDRESS, PREFIX_DATETAG, PREFIX_TAG);
 
         Index index;
 
@@ -58,6 +60,8 @@ public class EditCommandParser implements Parser<EditCommand> {
         if (argMultimap.getValue(PREFIX_ADDRESS).isPresent()) {
             editPersonDescriptor.setAddress(ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get()));
         }
+        parseDateTagsForEdit(argMultimap.getAllValues(PREFIX_DATETAG)).ifPresent(editPersonDescriptor::setDateTags);
+
         parseTagsForEdit(argMultimap.getAllValues(PREFIX_TAG)).ifPresent(editPersonDescriptor::setTags);
 
         if (!editPersonDescriptor.isAnyFieldEdited()) {
@@ -80,6 +84,16 @@ public class EditCommandParser implements Parser<EditCommand> {
         }
         Collection<String> tagSet = tags.size() == 1 && tags.contains("") ? Collections.emptySet() : tags;
         return Optional.of(ParserUtil.parseTags(tagSet));
+    }
+
+    private Optional<Set<DateTag>> parseDateTagsForEdit(Collection<String> dateTags) throws ParseException {
+        assert dateTags != null;
+
+        if (dateTags.isEmpty()) {
+            return Optional.empty();
+        }
+        Collection<String> dateTagSet = dateTags.size() == 1 && dateTags.contains("") ? Collections.emptySet() : dateTags;
+        return Optional.of(ParserUtil.parseDateTags(dateTagSet));
     }
 
 }

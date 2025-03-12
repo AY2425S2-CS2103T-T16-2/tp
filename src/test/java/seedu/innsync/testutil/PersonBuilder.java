@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import seedu.innsync.model.person.Address;
+import seedu.innsync.model.tag.DateTag;
 import seedu.innsync.model.person.Email;
 import seedu.innsync.model.person.Name;
 import seedu.innsync.model.person.Person;
@@ -20,11 +21,13 @@ public class PersonBuilder {
     public static final String DEFAULT_PHONE = "85355255";
     public static final String DEFAULT_EMAIL = "amy@gmail.com";
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
+    public static final String DEFAULT_DATETAG = "test";
 
     private Name name;
     private Phone phone;
     private Email email;
     private Address address;
+    private DateTag dateTag;
     private Set<Tag> tags;
 
     /**
@@ -35,6 +38,7 @@ public class PersonBuilder {
         phone = new Phone(DEFAULT_PHONE);
         email = new Email(DEFAULT_EMAIL);
         address = new Address(DEFAULT_ADDRESS);
+        dateTag = new DateTag(DEFAULT_DATETAG);
         tags = new HashSet<>();
     }
 
@@ -46,6 +50,7 @@ public class PersonBuilder {
         phone = personToCopy.getPhone();
         email = personToCopy.getEmail();
         address = personToCopy.getAddress();
+        dateTag = personToCopy.getDateTag();
         tags = new HashSet<>(personToCopy.getTags());
     }
 
@@ -54,6 +59,14 @@ public class PersonBuilder {
      */
     public PersonBuilder withName(String name) {
         this.name = new Name(name);
+        return this;
+    }
+
+    /**
+     *
+     */
+    public PersonBuilder withDateTag(String dateTag) {
+        this.dateTag = new DateTag(dateTag);
         return this;
     }
 
@@ -90,7 +103,7 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        return new Person(name, phone, email, address, tags);
+        return new Person(name, phone, email, address, dateTag, tags);
     }
 
 }
