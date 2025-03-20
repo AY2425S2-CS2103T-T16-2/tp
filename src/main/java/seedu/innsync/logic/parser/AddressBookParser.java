@@ -20,6 +20,7 @@ import seedu.innsync.logic.commands.HelpCommand;
 import seedu.innsync.logic.commands.ListCommand;
 import seedu.innsync.logic.commands.ListStarCommand;
 import seedu.innsync.logic.commands.StarCommand;
+import seedu.innsync.logic.commands.TagCommand;
 import seedu.innsync.logic.commands.UnstarCommand;
 import seedu.innsync.logic.parser.exceptions.ParseException;
 
@@ -59,6 +60,9 @@ public class AddressBookParser {
 
         case AddCommand.COMMAND_WORD:
             return new AddCommandParser().parse(arguments);
+
+        case TagCommand.COMMAND_WORD:
+            return new TagCommandParser().parse(arguments);
 
         case BookingTagCommand.COMMAND_WORD:
             return new BookingTagParser().parse(arguments);

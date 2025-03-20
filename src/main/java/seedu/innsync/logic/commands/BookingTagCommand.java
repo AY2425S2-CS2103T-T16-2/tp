@@ -19,7 +19,7 @@ import seedu.innsync.model.tag.BookingTag;
 
 
 /**
- * Adds a person to the address book.
+ * Adds booking tag to a person to the address book.
  */
 public class BookingTagCommand extends Command {
 
