@@ -527,26 +527,26 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Non-Functional Requirements
 1.  Should work on any _mainstream OS_ as long as it has Java `17` or above installed.
-2.  Should be able to hold up to 1000 visitors without a noticeable sluggishness in performance for typical usage.
+2.  Should be able to hold up to 1000 visitors without noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 4.  The application size should not be more than 100mb to enable user to have easy installation on various devices.
-5.  The application should also be optimized such that its CPU and memory usage is low so that it can run on low end machine.
-6.  The system should be optimised for a single-user operation instead of multiple user operation.
-7.  The application should not crash during network failure and be reliable enough for continuous use case during operation hours.
-8.  The data used should be stored in structured and human-readable format like JSON.
+5.  The application should also be optimized such that its CPU and memory usage is low so that it can run on low-end machines.
+6.  The system should be optimized for single-user operation instead of multiple-user operation.
+7.  The application should not crash during network failures and be reliable enough for continuous use case during operation hours.
+8.  The data used should be stored in a structured and human-readable format like JSON.
 9.  Should be easily extendable so that new features can be added without having to refactor the entire project.
 
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, MacOS
 * **Private contact detail**: A contact detail that is not meant to be shared with others
-* **Airbnb host**: An Airbnb host is an individual or business that list their property on the platform for short-term rentals. The host provide accommodations in the forms of aparments, houses or rooms for guests, typically for leisure activities.
+* **Airbnb host**: An Airbnb host is an individual or business that list their property on the platform for short-term rentals. The host provide accommodations in the forms of apartments, houses or rooms for guests, typically for leisure activities.
 * **Visitor**:  Any individual who accesses an Airbnb property, including guests staying at the property, service providers performing work, or other authorized individuals. Visitors may include cleaners, maintenance personnel, property inspectors, delivery services, and other vendors.
-* **AB-3**: This represents the code name for the AddressBook Level 3 application, which was used as the base framework for student customised CLI management system to be developed.
+* **AB-3**: This represents the code name for the AddressBook Level 3 application, which was used as the base framework for student customized CLI management system to be developed.
 * **CLI (Command Line Interface)**: A text-based interface where users interact with the application with a keyboard typing commands instead of using a graphical user interface.
 * **JAR**: A packed file format used in Java that contains compiled java codes to enable easy distribution, portability and execution that includes libraries and resources to allow the program to function.
 * **JSON (JavaScript Object Notation)**: A lightweight data format widely used for storing and exchanging structured data in a human-readable, that is often used in databases and APIs.
-* **GUI (Graphical User Interface)**: A visual graphical interface that allows users to interact with the application using various graphical elements like search box, buttons, textbox and eta.
+* **GUI (Graphical User Interface)**: A visual graphical interface that allows users to interact with the application using various graphical elements like search boxes, buttons, text boxes, and eta.
 * **Prerequisite**: A set of rules or instructions to be executed before prior to executing a particular task.
 * **MSS (Main Success Scenario)**:It describes the most straightforward interaction for a given use case, which assumes that nothing goes wrong.
 * **API (Application Programming Interface)**: A set of rules or protocols that govern the application to allow different software applications to work together by communication with each other.
