@@ -1,0 +1,70 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant ":MemoCommandParser" as MemoCommandParser LOGIC_COLOR
+participant "command:MemoCommand" as MemoCommand LOGIC_COLOR
+participant ":CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant "m:Model" as Model MODEL_COLOR
+end box
+
+[-> LogicManager : execute("memo 1 m/test")
+activate LogicManager
+
+LogicManager -> AddressBookParser : parseCommand("memo 1 m/test")
+activate AddressBookParser
+
+create MemoCommandParser
+AddressBookParser -> MemoCommandParser
+activate MemoCommandParser
+
+MemoCommandParser --> AddressBookParser
+deactivate MemoCommandParser
+
+AddressBookParser -> MemoCommandParser : parse("1 m/test")
+activate MemoCommandParser
+
+create MemoCommand
+MemoCommandParser -> MemoCommand
+activate MemoCommand
+
+MemoCommand --> MemoCommandParser :
+deactivate MemoCommand
+
+MemoCommandParser --> AddressBookParser : command
+deactivate MemoCommandParser
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+MemoCommandParser -[hidden]-> AddressBookParser
+destroy MemoCommandParser
+
+AddressBookParser --> LogicManager : command
+deactivate AddressBookParser
+
+LogicManager -> MemoCommand : execute(m)
+activate MemoCommand
+
+MemoCommand -> Model : setPerson(personToEdit, editedPerson)
+activate Model
+
+Model --> MemoCommand
+deactivate Model
+
+create CommandResult
+MemoCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> MemoCommand
+deactivate CommandResult
+
+MemoCommand --> LogicManager : commandResult
+deactivate MemoCommand
+
+[<--LogicManager
+deactivate LogicManager
+@enduml
