@@ -1,0 +1,30 @@
+@startuml FindCommandParser
+hide circle
+skinparam classAttributeIconSize 0
+
+Class "<<interface>>\nParser" as Parser {
+  +parse(String): T
+}
+
+Class FindCommandParser {
+  -NAME_VALIDATION_REGEX: Pattern
+  -PHONE_VALIDATION_REGEX: Pattern
+  -EMAIL_VALIDATION_REGEX: Pattern
+  -ADDRESS_VALIDATION_REGEX: Pattern
+  -TAG_VALIDATION_REGEX: Pattern
+  -BOOKING_DATE_VALIDATION_REGEX: Pattern
+  -BOOKING_PROPERTY_VALIDATION_REGEX: Pattern
+  -MEMO_VALIDATION_REGEX: Pattern
+  +parse(String): FindCommand
+  -handleLegacyFormat(String): FindCommand
+  -handleModernFormat(String): FindCommand
+  -validateKeywords(List<String>, SearchType): void
+  -getSearchTypeFromPrefix(String): SearchType
+}
+
+Class ParseException
+
+FindCommandParser .up.|> Parser
+Parser .right.> ParseException: throws >
+FindCommandParser .right.> ParseException: throws >
+@enduml

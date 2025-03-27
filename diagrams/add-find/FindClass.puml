@@ -1,0 +1,36 @@
+@startuml FindCommand
+hide circle
+skinparam classAttributeIconSize 0
+
+Class "{abstract}\nCommand" as Command {
+  +execute(Model): CommandResult
+}
+
+Class FindCommand {
+  +COMMAND_WORD: String
+  +MESSAGE_USAGE: String
+  -searchCriteria: Map<SearchType, List<String>>
+  +enum SearchType
+  +FindCommand(Map<SearchType, List<String>>)
+  +getSearchCriteria(): Map<SearchType, List<String>>
+  +getPredicate(): Predicate<Person>
+  +execute(Model): CommandResult
+}
+
+Class CommandException
+
+Class Person {
+  +getName(): Name
+  +getPhone(): Phone
+  +getEmail(): Email
+  +getAddress(): Address
+  +getMemo(): Memo
+  +getTags(): Set<Tag>
+  +getBookingTags(): Set<BookingTag>
+}
+
+FindCommand -up-|> Command
+Command ..> CommandException: throws >
+FindCommand .right.> CommandException: throws >
+FindCommand ..> Person: filters >
+@enduml
