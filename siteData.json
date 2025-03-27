@@ -122,6 +122,7 @@
         "3-2-graphical-user-interface-layout": "3.2 Graphical User Interface Layout:",
         "3-3-how-to-use-innsync-features": "3.3 How to use InnSync features:",
         "4-features": "4. Features",
+        "4-0-command-summary": "4.0 Command Summary",
         "4-1-viewing-help-help": "4.1 Viewing help : help",
         "4-2-features-related-to-person": "4.2 Features related to person",
         "4-2-1-adding-a-person-add": "4.2.1 Adding a person: add",
@@ -142,11 +143,11 @@
         "4-6-general-features": "4.6 General features",
         "4-6-1-clearing-all-entries-clear": "4.6.1 Clearing all entries : clear",
         "4-6-2-exiting-the-program-exit": "4.6.2 Exiting the program : exit",
+        "4-6-3-undoing-the-last-change-undo": "4.6.3 Undoing the last change : undo",
         "4-7-saving-the-data": "4.7 Saving the data",
         "4-8-editing-the-data-file": "4.8 Editing the data file",
         "5-faq": "5. FAQ",
-        "6-known-issues": "6. Known issues",
-        "7-command-summary": "7. Command summary"
+        "6-known-issues": "6. Known issues"
       },
       "headingKeywords": {}
     },
