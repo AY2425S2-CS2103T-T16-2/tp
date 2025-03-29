@@ -1,5 +1,6 @@
 package seedu.innsync.logic.commands;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.innsync.logic.commands.CommandTestUtil.VALID_MEMO_AMY;
@@ -132,5 +133,14 @@ public class MemoCommandTest {
         // different memo -> returns false
         assertFalse(standardCommand.equals(new MemoCommand(INDEX_FIRST_PERSON,
                 new Memo(VALID_MEMO_BOB))));
+    }
+
+    @Test
+    public void toStringMethod() {
+        Index targetIndex = Index.fromOneBased(1);
+        MemoCommand memoCommand = new MemoCommand(targetIndex, new Memo(VALID_MEMO_AMY));
+        String expected = MemoCommand.class.getCanonicalName() + "{index=" + targetIndex
+                + ", memo=" + new Memo(VALID_MEMO_AMY) + "}";
+        assertEquals(expected, memoCommand.toString());
     }
 }

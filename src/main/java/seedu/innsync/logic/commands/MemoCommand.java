@@ -90,6 +90,7 @@ public class MemoCommand extends Command {
     public String toString() {
         return new ToStringBuilder(this)
                 .add("index", index)
+                .add("memo", memo)
                 .toString();
     }
 }
