@@ -1,0 +1,57 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant "l:ListStarCommand" as ListStarCommand LOGIC_COLOR
+participant "r:CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant "m:Model" as Model MODEL_COLOR
+end box
+
+[-> LogicManager : execute("liststar")
+activate LogicManager
+
+LogicManager -> AddressBookParser : parseCommand("liststar")
+activate AddressBookParser
+
+create ListStarCommand
+AddressBookParser -> ListStarCommand
+activate ListStarCommand
+
+ListStarCommand --> AddressBookParser : l
+deactivate ListStarCommand
+
+AddressBookParser --> LogicManager : l
+deactivate AddressBookParser
+
+LogicManager -> ListStarCommand : execute(m)
+activate ListStarCommand
+
+ListStarCommand -> Model : updateFilteredPersonList(PREDICATE_SHOW_STARRED_PERSONS)
+activate Model
+note right
+  Filter list to show
+  only starred persons
+end note
+Model --> ListStarCommand
+deactivate Model
+
+create CommandResult
+ListStarCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> ListStarCommand : r
+deactivate CommandResult
+
+ListStarCommand --> LogicManager : r
+deactivate ListStarCommand
+
+[<-- LogicManager
+deactivate LogicManager
+
+@enduml
