@@ -434,7 +434,7 @@ with(this){return _c('ul',[_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inl
 with(this){return _c('p',[_c('strong',[_v("Searching by booking property:")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find bp/BeachHouse")]),_v(" - Finds contacts with bookings at properties containing \"BeachHouse\"")]),_v(" "),_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find bp/Villa bp/Resort")]),_v(" - Finds contacts with bookings at properties containing either \"Villa\" or \"Resort\"")])])}
+with(this){return _c('ul',[_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find bp/Beach House")]),_v(" - Finds contacts with bookings at properties containing \"Beach House\"")]),_v(" "),_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find bp/Villa bp/Resort")]),_v(" - Finds contacts with bookings at properties containing either \"Villa\" or \"Resort\"")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Combining search fields:")])])}
@@ -506,6 +506,6 @@ with(this){return _c('ol',[_c('li',[_c('strong',[_v("When using multiple screens
 with(this){return _c('h2',{attrs:{"id":"7-glossary"}},[_v("7. Glossary"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#7-glossary","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.6.0")]),_v(", generated on Fri, 4 Apr 2025, 2:33:05 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.6.0")]),_v(", generated on Fri, 4 Apr 2025, 2:53:14 GMT+8]")])])])}
 }];
   
