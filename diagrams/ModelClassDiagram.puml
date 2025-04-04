@@ -18,6 +18,8 @@ Class Address
 Class Email
 Class Name
 Class Phone
+Class Memo
+Class Request
 Class BookingTag
 Class Tag
 
@@ -42,8 +44,10 @@ Person *--> Name
 Person *--> Phone
 Person *--> Email
 Person *--> Address
+Person *--> Memo
 Person *--> "*" BookingTag
 Person *--> "*" Tag
+Person *--> "*" Request
 
 Person -[hidden]up--> I
 UniquePersonList -[hidden]right-> I
