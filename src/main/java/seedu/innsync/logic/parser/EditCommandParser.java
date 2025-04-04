@@ -1,6 +1,7 @@
 package seedu.innsync.logic.parser;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.innsync.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.innsync.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.innsync.logic.parser.CliSyntax.PREFIX_BOOKINGTAG;
 import static seedu.innsync.logic.parser.CliSyntax.PREFIX_EMAIL;
@@ -16,10 +17,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+import java.util.stream.Stream;
 import seedu.innsync.commons.core.index.Index;
 import seedu.innsync.logic.Messages;
 import seedu.innsync.logic.commands.EditCommand;
 import seedu.innsync.logic.commands.EditCommand.EditPersonDescriptor;
+import seedu.innsync.logic.commands.TagCommand;
 import seedu.innsync.logic.parser.exceptions.ParseException;
 import seedu.innsync.model.request.Request;
 import seedu.innsync.model.tag.BookingTag;
@@ -44,6 +47,10 @@ public class EditCommandParser implements Parser<EditCommand> {
 
         argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_ADDRESS, PREFIX_MEMO);
 
+        if (!atLeastOnePrefixPresent(argMultimap, PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL,
+                PREFIX_ADDRESS, PREFIX_MEMO, PREFIX_REQUEST, PREFIX_BOOKINGTAG, PREFIX_TAG)) {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditCommand.MESSAGE_USAGE));
+        }
         EditPersonDescriptor editPersonDescriptor = new EditPersonDescriptor();
 
         if (argMultimap.getValue(PREFIX_NAME).isPresent()) {
@@ -82,6 +89,10 @@ public class EditCommandParser implements Parser<EditCommand> {
                     pe.getMessage(), EditCommand.MESSAGE_USAGE), pe);
         }
         return new EditCommand(index, editPersonDescriptor);
+    }
+
+    private static boolean atLeastOnePrefixPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {
+        return Stream.of(prefixes).anyMatch(prefix -> argumentMultimap.getValue(prefix).isPresent());
     }
 
     /**
