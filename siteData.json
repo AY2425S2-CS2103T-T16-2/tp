@@ -62,7 +62,9 @@
         "appendix-planned-enhancements": "Appendix: Planned Enhancements",
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
         "launch-and-shutdown": "Launch and shutdown",
+        "listing-all-visitors": "Listing all visitors",
         "deleting-a-visitor": "Deleting a visitor",
+        "adding-a-visitor": "Adding a visitor",
         "saving-data": "Saving data"
       },
       "headingKeywords": {}
