@@ -70,6 +70,8 @@
         "starring-a-visitor": "Starring a visitor",
         "unstarring-a-visitor": "Unstarring a visitor",
         "adding-a-request-to-a-visitor": "Adding a request to a visitor",
+        "marking-a-request-of-a-visitor": "Marking a request of a visitor",
+        "unmarking-a-request-of-a-visitor": "Unmarking a request of a visitor",
         "deleting-a-request": "Deleting a request",
         "saving-data": "Saving data"
       },
