@@ -73,6 +73,8 @@
         "marking-a-request-of-a-visitor": "Marking a request of a visitor",
         "unmarking-a-request-of-a-visitor": "Unmarking a request of a visitor",
         "deleting-a-request": "Deleting a request",
+        "tagging-a-visitor": "Tagging a visitor",
+        "untagging-a-visitor": "Untagging a visitor",
         "saving-data": "Saving data"
       },
       "headingKeywords": {}
