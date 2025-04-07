@@ -65,6 +65,8 @@
         "listing-all-visitors": "Listing all visitors",
         "deleting-a-visitor": "Deleting a visitor",
         "adding-a-visitor": "Adding a visitor",
+        "staring-a-visitor": "Staring a visitor",
+        "unstar-a-visitor": "Unstar a visitor",
         "saving-data": "Saving data"
       },
       "headingKeywords": {}
